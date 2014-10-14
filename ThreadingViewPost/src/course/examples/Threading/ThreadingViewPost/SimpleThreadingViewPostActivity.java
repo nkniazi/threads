@@ -15,21 +15,17 @@ public class SimpleThreadingViewPostActivity extends Activity {
 	private Bitmap mBitmap;
 	private ImageView mImageView;
 	private int mDelay = 5000;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
 		mImageView = (ImageView) findViewById(R.id.imageView);
 
 		final Button button = (Button) findViewById(R.id.loadButton);
 		button.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				loadIcon();
-			}
-		});
+				loadIcon();		}		});
 
 		final Button otherButton = (Button) findViewById(R.id.otherButton);
 		otherButton.setOnClickListener(new OnClickListener() {
@@ -37,10 +33,7 @@ public class SimpleThreadingViewPostActivity extends Activity {
 			public void onClick(View v) {
 				Toast.makeText(SimpleThreadingViewPostActivity.this, "I'm Working",
 						Toast.LENGTH_SHORT).show();
-			}
-		});
-	}
-
+			}		});	}
 	private void loadIcon() {
 		new Thread(new Runnable() {
 			@Override
@@ -58,9 +51,5 @@ public class SimpleThreadingViewPostActivity extends Activity {
 					public void run() {
 
 						mImageView.setImageBitmap(mBitmap);
-					}
-				});
-			}
-		}).start();
-	}
-}
+					}				});			}
+		}).start();	}}

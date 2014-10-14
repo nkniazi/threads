@@ -1,5 +1,4 @@
 package course.examples.Threading.NoThreading;
-
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,7 +13,6 @@ public class NoThreadingExample extends Activity {
 	private Bitmap mBitmap;
 	private ImageView mIView;
 	private int mDelay = 5000;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,19 +26,14 @@ public class NoThreadingExample extends Activity {
 				loadIcon();
 				if (null != mBitmap) {
 					mIView.setImageBitmap(mBitmap);
-				}
-			}
-		});
-
+				}		}		});
 		final Button otherButton = (Button) findViewById(R.id.otherButton);
 		otherButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(NoThreadingExample.this, "I'm Working",
 						Toast.LENGTH_SHORT).show();
-			}
-		});
-	}
+			}		});	}
 
 	private void loadIcon() {
 		try {
@@ -48,6 +41,4 @@ public class NoThreadingExample extends Activity {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.painter);
-	}
-}
+		mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.painter);}}
